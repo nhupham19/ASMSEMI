@@ -118,17 +118,17 @@
             <img class=" btn hover-shadow cursor"
                  src="{{ asset('uploads/image/' ~ products.productImage)}}" height="300px" onclick="openModal();currentSlide(1)">
            </a><span style="float: right; width:67%; height: 300px;"><h3><b>{{ products.name }}</b></h3>
-                <hr class="navbar-nav" width="400px" align="left" margin-left="200px"><br><b style="color: #FF8C00"><big><span style="font-size:20px">{{ products.price }}đ</span></big></b>
+                <hr class="navbar-nav" width="400px" align="left" margin-left="200px"><br><b style="color: #FF8C00"><big><span style="font-size:20px">Price: {{ products.price }}$</span></big></b>
                <br><br> <hr class="navbar-nav" width="400px" align="left" margin-left="200px"><a><span style="font-size:13px"><b>Quantity: </b>{{ products.quantity }}</span></a>
                     <br><a><span style="font-size:13px"><b>Due: </b>{{ products.date|date('F j,Y, g:i a') }}</span></a><br><br>
-                {{ form_start(form) }}
-                    <div class="form-group" style="display: none;">
-                        {{ form_widget(form.quantity, {'attr': {'class': 'hidden', 'value': '1'}}) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning', 'style': 'width: 100%'}}) }}
-                    </div>
-                {{ form_end(form) }}
+{#                {{ form_start(form) }}#}
+{#                    <div class="form-group" style="display: none;">#}
+{#                        {{ form_widget(form.quantity, {'attr': {'class': 'hidden', 'value': '1'}}) }}#}
+{#                    </div>#}
+{#                    <div class="form-group">#}
+{#                        {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning', 'style': 'width: 100%'}}) }}#}
+{#                    </div>#}
+{#                {{ form_end(form) }}#}
                     {% if is_granted('ROLE_ADMIN') %}
           <span style="float: right"><a href="{{path('product_edit',{'id':products.id})}} " class='btn btn-outline-secondary btn-sm '>Edit</a>
                         <a href="{{ path('product_delete', {'id': products.id}) }} " class='btn btn-outline-danger btn-sm'>Delete</a></span></span>
@@ -136,7 +136,7 @@
             </li>
     </ul><br><br>
         <ul class="list-group">
-            <li class="list-group-item" style="background-color: #363636"><a style="color: white">Description</a></li>
+            <li class="list-group-item" style="background-color: #363636"><a style="color: white">Product Description</a></li>
             <li class="list-group-item">
                 <p style="white-space: pre-wrap;">{{ products.description }}</p>
             </li>
@@ -144,10 +144,10 @@
 
     </div></div>
         <div class="col-sm-3">
-            <br><br><ul class="list-group">
-                <li class="list-group-item" style="background-color: #363636">
-            <h4 style="color: white; width: 50%;height: 50%;margin-right: 55px;margin-left: auto;margin-top: auto;margin-bottom: auto">Suggestion</h4></li>
-                <li class="list-group-item">
+{#            <br><br><ul class="list-group">#}
+{#                <li class="list-group-item" style="background-color: #363636">#}
+{#            <h4 style="color: white; width: 50%;height: 50%;margin-right: 55px;margin-left: auto;margin-top: auto;margin-bottom: auto">Suggestion</h4></li>#}
+{#                <li class="list-group-item">#}
             <!-- Carousel -->
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
                 <!-- Left and right controls/icons -->
